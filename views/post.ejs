@@ -1,9 +1,10 @@
+
 <%- include('partials/header') -%>
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-6">
       <h2><%= post.title %></h2>
-      <img class="img-fluid" src="<%= post.image%>" />
+      <audio class="audio-fluid" src="<%= post.image%>" controls>
       <div class="row justify-content-between">
         <form
           class="col-1"
@@ -28,8 +29,8 @@
       <p><%= post.caption %></p>
     </div>
     <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+      <a class="btn btn-primary" href="/profile">Return to Home</a>
+      <a class="btn btn-primary" href="/feed">Return to Projects</a>
     </div>
   </div>
 </div>

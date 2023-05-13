@@ -26,10 +26,26 @@ module.exports = {
       console.log(err);
     }
   },
+  getAccount: async (req, res) => {
+    try {
+      const post = await Post.findById(req.params.id);
+      res.render("account.ejs", { post: post, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getStartnew: async (req, res) => {
+    try {
+      const post = await Post.findById(req.params.id);
+      res.render("startnew.ejs", { post: post, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
+      const result = await cloudinary.uploader.upload(req.file.path, {resource_type: "auto"});
 
       await Post.create({
         title: req.body.title,

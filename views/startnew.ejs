@@ -27,7 +27,7 @@
             <a class="nav-link" href="/account">Account</a>
           </li>
           <li>
-            <a class="nav-link" href="/feed">Projects</a>
+            <a class="nav-link" href="/history">Projects</a>
           </li>
           <li>
             <a class="nav-link" href="/startnew">Start New Project</a>
@@ -84,16 +84,13 @@
             <% for(var i=0; i<posts.length; i++) {%>
               <li class="col-6 justify-content-between mt-5">
                 <a href="/post/<%= posts[i]._id%>">
-                  <%= posts[i].title %>: <%= posts[i].caption %>
+                  <img class="img-fluid" src="<%= posts[i].image%>">
                 </a>
               </li>
               <% } %>
           </ul>
           <div class="row justify-content-center mt-5">
             <a class="btn btn-primary" href="/feed">Return to Your Projects</a>
-          </div>
-          <div class="row justify-content-center mt-5">
-            <a class="btn btn-primary" href="/feed">Start new Project</a>
           </div>
         </div>
       </div>
