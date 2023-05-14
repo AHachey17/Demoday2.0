@@ -36,8 +36,8 @@ module.exports = {
   },
   getStartnew: async (req, res) => {
     try {
-      const post = await Post.findById(req.params.id);
-      res.render("startnew.ejs", { post: post, user: req.user });
+      const posts = await Post.findById(req.params.id);
+      res.render("startnew.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
