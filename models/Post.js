@@ -5,7 +5,7 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  image: {
+  audio: {
     type: String,
     require: true,
   },
@@ -13,7 +13,7 @@ const PostSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  caption: {
+  question: {
     type: String,
     required: true,
   },

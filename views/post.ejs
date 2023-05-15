@@ -4,7 +4,7 @@
   <div class="row justify-content-center mt-5">
     <div class="col-6">
       <h2><%= post.title %></h2>
-      <audio class="audio-fluid" src="<%= post.image%>" controls>
+      <audio class="audio-fluid" src="<%= post.audio%>" controls>
       <div class="row justify-content-between">
         <form
           class="col-1"
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="col-3 mt-5">
-      <p><%= post.caption %></p>
+      <p><%= post.question %></p>
     </div>
     <div class="col-6 mt-5">
       <a class="btn btn-primary" href="/profile">Return to Home</a>
