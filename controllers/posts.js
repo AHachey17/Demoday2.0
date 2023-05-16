@@ -36,7 +36,7 @@ module.exports = {
   },
   getStartnew: async (req, res) => {
     try {
-      const posts = await Post.findById(req.params.id);
+      const posts = await Post.find({ user: req.user.id });
       res.render("startnew.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
