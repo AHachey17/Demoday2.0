@@ -44,7 +44,8 @@ fetch('/getTranscript')
 .then(response => {
   if (response.ok) return response.json()
 })
-.then(transcript => {
-  document.querySelector('#transcript').innerHTML = transcript.data.text
-  console.log(transcript)
+.then(data => {
+  console.log(data)
+  document.querySelector('#transcript').innerHTML = data.transcriptText
+  
 })

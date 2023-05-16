@@ -16,7 +16,7 @@ module.exports = {
       },
     });
 
-    const getTranscript = async () => {
+    //const getTranscript = async () => {
       // Sends the audio file to AssemblyAI for transcription
       const response = await assembly.post("/transcript", {
         audio_url: audioURL,
@@ -33,14 +33,16 @@ module.exports = {
           console.log("\nTranscription completed!\n");
           transcriptText = transcript.data.text;
           console.log(`Your transcribed text:\n\n${transcriptText}`);
+          
+          res.send({ transcriptText: transcriptText });
 
           clearInterval(checkCompletionInterval);
         }
       }, refreshInterval);
-    };
+    //};
 
-    await getTranscript(); // Call the getTranscript function
+    // await getTranscript(); Call the getTranscript function
 
-    res.send({ transcriptText: transcriptText });
+    
   },
 };
