@@ -11,6 +11,7 @@ router.get("/", homeController.getIndex);
 router.get("/home", ensureAuth, postsController.getHome);
 router.get("/account", ensureAuth, postsController.getAccount);
 router.get("/startnew", ensureAuth, postsController.getStartnew);
+router.get("/questions", ensureAuth, postsController.getQuestions);
 router.get("/projects", ensureAuth, postsController.getProjects);
 router.get("/login", authController.getLogin);
 router.get("/getTranscript", audioController.getTranscript);

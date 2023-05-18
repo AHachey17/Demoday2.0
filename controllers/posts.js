@@ -1,5 +1,6 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
+const Interview = require("../models/Interview");
 
 module.exports = {
   getHome: async (req, res) => {
@@ -36,8 +37,17 @@ module.exports = {
   },
   getStartnew: async (req, res) => {
     try {
-      const posts = await Post.find({ user: req.user.id });
-      res.render("startnew.ejs", { posts: posts, user: req.user });
+      const post = await Post.findById(req.params.id);
+      res.render("startnew.ejs", { post: post, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getQuestions: async (req, res) => {
+    try {
+      const questions = await Interview.find({position: "Cashier"});
+      console.log('scottymuffins', questions);
+      res.json( { questions, user: req.user });
     } catch (err) {
       console.log(err);
     }
