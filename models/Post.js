@@ -29,9 +29,9 @@ const PostSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  trancript: {
+  transcript: {
     type: String,
-    required: true
+    required: false
   }
 });
 

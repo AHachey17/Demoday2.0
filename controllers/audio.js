@@ -4,8 +4,8 @@ module.exports = {
   getTranscript: async (req, res) => {
     let transcriptText;
     const audioURL =
-      "https://res.cloudinary.com/dgn4l9in5/video/upload/v1684113458/34226e54be907ece773e9d84e7cc9a6d_x4ozve.mp4";
-    const APIKey = "883dc58cc16342eba5662f6df39f6c65";
+      "https://res.cloudinary.com/dgn4l9in5/video/upload/v1684434638/60e3faf0be523020d9e8ef0f42b227f7_a6f1lp.mp4";
+    const APIKey = "a6cf19bad2b14bbc86429dc2c062f6f4"; 
     const refreshInterval = 5000;
 
     const assembly = axios.create({

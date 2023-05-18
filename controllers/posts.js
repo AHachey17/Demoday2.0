@@ -63,7 +63,7 @@ module.exports = {
         cloudinaryId: result.public_id,
         question: req.body.question,
         likes: 0,
-        user: req.user.id,
+        user: req.user.id
       });
       console.log("Post has been added!");
       res.redirect("/home");
