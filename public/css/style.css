@@ -8,7 +8,7 @@ body{
 }
 
 .indexContainer{
-  background: url(imgs/test2.gif);
+  background: url(../imgs/test2.gif);
   background-size: cover; 
 }
 
