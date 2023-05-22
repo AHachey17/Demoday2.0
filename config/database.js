@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.DB_STRING, {
@@ -17,7 +18,7 @@ const connectDB = async () => {
 };
 
 connectDB().then(() => {
-  app.listen(PORT, () => {
+  app.listen(process.env.PORT, () => {
       console.log("listening for requests");
   })
 })
