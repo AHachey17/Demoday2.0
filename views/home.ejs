@@ -1,50 +1,16 @@
 
-
-
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/login">CCP</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/account">Account</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/projects">Projects</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/startnew">Start New Project</a>
-          </li>
-          <li>
-        </ul>
-        </li>
-        <!-- <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li> -->
-        </ul>
-        <form class="d-flex" role="search">
-          <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button> -->
-          <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-        </form>
-      </div>
-    </div>
-  </nav>
-
-
   <%- include('partials/header') -%>
+    <div class="home-head">
+      
+      <h4> "It may be prudent to prepare one and a half times as many questions as you expect to ask. For a 40-minute interview with eight questions, this means preparing 12. Typically, you can expect to get through at least five or six questions in a 40-minute session." -<a href="https://uk.indeed.com/career-advice/interviewing/how-many-questions-are-asked-in-interview#:~:text=It%20may%20be%20prudent%20to,in%20a%2040%2Dminute%20session.">Indeed Article</a></h4>
+      
+    </div>
+
     <div class="container">
       <div class="row mt-5">
         <div class="col-6">
           
-          <div class="mt-5">
+          <div class="mt-5 home-upload">
             <h2>Upload an Interview Question</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
@@ -64,20 +30,21 @@
           </div>
         </div>
         <div class="col-6">
+          <h3>Save & Edit your files</h3>
           <ul class="row list-unstyled">
             <% for(var i=0; i<posts.length; i++) {%>
               <li class="col-6 justify-content-between mt-5">
                 <a href="/post/<%= posts[i]._id%>">
-                  <%= posts[i].title %>: <%= posts[i].question %>
-                </a>
+                  <%= posts[i].title %>: <%= posts[i].question %> </a>
+                
               </li>
               <% } %>
           </ul>
           <div class="row justify-content-center mt-5">
-            <a class="btn btn-primary" href="/projects">Return to Your Projects</a>
+            <a class="home-btn btn-primary" href="/projects">Return to Your Projects</a> <a class="home-btn btn-primary" href="/startnew">Start new Project</a>
           </div>
           <div class="row justify-content-center mt-5">
-            <a class="btn btn-primary" href="/startnew">Start new Project</a>
+            
           </div>
         </div>
       </div>

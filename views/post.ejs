@@ -1,45 +1,9 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-   <a class="navbar-brand" href="/login">CCP</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/account">Account</a>
-        </li>
-        <li>
-          <a class="nav-link" href="/projects">Projects</a>
-        </li>
-        <li>
-          <a class="nav-link" href="/startnew">Start New Project</a>
-        </li>
-          <li>
-          </ul>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li> -->
-      </ul>
-      <form class="d-flex" role="search">
-
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-      </form>
-    </div>
-  </div>
-</nav>
-
-
 
 
 <%- include('partials/header') -%>
 <div class="container">
   <div class="row justify-content-center mt-5">
+    <h1>test <i class="fa-solid fa-trash"></i></h1>
     <div class="col-6">
       <h2><%= post.title %></h2>
       <audio class="audio-fluid" src="<%= post.audio%>" controls>
@@ -59,6 +23,7 @@
           class="col-3"
         >
           <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          <button"><i class="fa-solid fa-trash"></i></button>
         </form>
         <%}%>
       </div>
@@ -66,6 +31,7 @@
     <div class="col-3 mt-5">
       <!--speech to text, text goes here-->
       <p id="transcript"></p>
+      <span><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></span>
     </div>
     <div class="col-6 mt-5">
       <a class="btn btn-primary" href="/home ">Return to Home</a>
