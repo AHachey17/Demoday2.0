@@ -5,12 +5,15 @@ body{
 
 .logo{
   width: 14%;
+  margin-top: -5%;
+
 }
 
-/* .indexContainer{
+.indexContainer{
   background: url(../imgs/test2.gif);
   background-size: cover; 
-} */
+}
+
 
 #bg-video{
   width: 100%;
@@ -110,7 +113,7 @@ a.navbar-brand{
 
 h2{
   font-family: 'Anton', sans-serif;
-font-size: 2.5rem;  
+font-size: 1.5rem;  
 color: gray;
 
 
@@ -123,7 +126,7 @@ h1{
 h3{
   margin-top: 40px;
   font-family: 'Anton', sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: rgb(203, 179, 100);
 }
 

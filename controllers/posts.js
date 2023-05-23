@@ -1,6 +1,19 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Interview = require("../models/Interview");
+const axios = require("axios");
+const assembly = axios.create({
+  baseURL: "https://api.assemblyai.com/v2",
+  headers: {
+    authorization: "a6cf19bad2b14bbc86429dc2c062f6f4",
+    "content-type": "application/json",
+  },
+});
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+ 
 
 module.exports = {
   getHome: async (req, res) => {
@@ -46,7 +59,7 @@ module.exports = {
   getQuestions: async (req, res) => {
     try {
       const questions = await Interview.find({position: "Cashier"});
-      console.log('scottymuffins', questions);
+      console.log(questions);
       res.json( { questions, user: req.user });
     } catch (err) {
       console.log(err);
@@ -54,19 +67,39 @@ module.exports = {
   },
   createPost: async (req, res) => {
     try {
+      console.log(req.file);
       // Upload audio to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path, {resource_type: "auto"});
 
-      await Post.create({
-        title: req.body.title,
-        audio: result.secure_url,
-        cloudinaryId: result.public_id,
-        question: req.body.question,
-        likes: 0,
-        user: req.user.id
+      console.log(result);
+      const postresult = await assembly.post("/transcript", {
+        audio_url: result.secure_url
       });
-      console.log("Post has been added!");
-      res.redirect("/home");
+
+      console.log(postresult.data);
+      
+      while (true) {
+        await sleep(1000);
+        const transcription = await assembly.get(
+          `/transcript/${postresult.data.id}`
+          );
+          console.log(transcription.data);
+        if (transcription.data.status == "completed") {
+          await Post.create({
+            title: req.body.title,
+            audio: result.secure_url,
+            cloudinaryId: result.public_id,
+            question: req.body.question,
+            likes: 0,
+            user: req.user.id,
+            transcript: transcription.data.text,
+            words: transcription.data.words
+          });  
+          console.log("Post has been added!");
+           res.redirect("/home");
+           return
+        }
+      }
     } catch (err) {
       console.log(err);
     }

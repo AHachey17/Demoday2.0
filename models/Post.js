@@ -32,6 +32,11 @@ const PostSchema = new mongoose.Schema({
   transcript: {
     type: String,
     required: false
+  },
+  words: { 
+    type: Array,
+    required: false,
+
   }
 });
 

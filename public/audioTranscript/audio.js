@@ -46,6 +46,6 @@ fetch('/getTranscript')
 })
 .then(data => {
   console.log(data)
-  document.querySelector('#transcript').innerHTML = data.transcriptText
+  
   
 })
