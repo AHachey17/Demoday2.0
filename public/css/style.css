@@ -7,9 +7,14 @@ body{
   width: 14%;
 }
 
-.indexContainer{
+/* .indexContainer{
   background: url(../imgs/test2.gif);
   background-size: cover; 
+} */
+
+#bg-video{
+  width: 100%;
+  position: relative;
 }
 
 main.container{
@@ -107,6 +112,7 @@ h2{
   font-family: 'Anton', sans-serif;
 font-size: 2.5rem;  
 color: gray;
+
 
 }
 
