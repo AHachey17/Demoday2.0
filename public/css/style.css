@@ -68,6 +68,7 @@ div.card-body{
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: stretch;
+    border-radius: 5%;
 }
 
 
@@ -226,7 +227,7 @@ p{
 
 a {
   text-decoration: none;
-  color: rgb(147, 145, 145);
+  color: rgb(73, 72, 72);
 }
 
 a:hover {
