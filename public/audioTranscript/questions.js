@@ -21,7 +21,7 @@ function getCashierQ(){
   })
   .then(data => {
     console.log(data)
-  document.querySelector('#printcashierQ').innerHTML = data.questions[0].question
+  document.querySelector('#printQuestions').innerHTML = data.questions[0].question
   })
 }
 
@@ -36,7 +36,7 @@ function getSoftwareQ(){
   })
   .then(data => {
     console.log(data)
-  document.querySelector('#printsoftwareQ').innerHTML = data.questions[0].question
+  document.querySelector('#printQuestions').innerHTML = data.questions[0].question
   })
 }
 
@@ -51,6 +51,10 @@ function getAdvisorQ(){
   })
   .then(data => {
     console.log(data)
-  document.querySelector('#printadvisorQ').innerHTML = data.questions[0].question
+  document.querySelector('#printQuestions').innerHTML = data.questions[0].question
   })
+}
+
+function questionaire(num){
+ return Math.floor(num + (num/2))
 }

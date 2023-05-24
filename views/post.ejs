@@ -2,7 +2,7 @@
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/login"><img class="logo" src="../imgs/3.jpg" alt="logo"></a>
+      <a class="navbar-brand" href="/"><img class="logo" src="../imgs/3.jpg" alt="logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/account">Account</a>
@@ -19,7 +19,7 @@
             <a class="nav-link" href="/projects">Projects</a>
           </li>
           <li>
-            <a class="nav-link" href="/startnew">Start New Project</a>
+            <a class="nav-link" href="/startnew">Questionaire</a>
           </li>
 
         </ul>
@@ -36,63 +36,39 @@
     </div>
   </nav>
 
-
+  <h1 class="post-title">Voice transcriper</h1>
 
   <div class="container">
     <div class="row justify-content-center mt-5">
-      <h1>test <i class="fa-solid fa-trash"></i></h1>
-      <div class="col-6">
+      <div class="post-col-6">
         <h2>
-          <%= post.title %>
+          Job Title: <%= post.title %>
         </h2>
-        <audio class="audio-fluid" src="<%= post.audio%>" controls>
+        <h4>
+          Question: <%= post.question %>
+        </h4>
+        <audio class="audio-fluid" src="<%= post.audio%>" controls></audio>
 
-          <p>
-            <%= post.transcript %>
-          </p>
-
-          <div class="row justify-content-between">
-            <form class="col-1" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
-              <button class="btn btn-primary fa fa-heart" type="submit"></button>
-            </form>
-            <h3 class="col-3">Likes: <%= post.likes %>
-            </h3>
-            <%if(post.user==user.id){ %>
-              <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
-                <button class="btn btn-primary fa fa-trash" type="submit"></button>
-              </form>
-              <%}%>
-          </div>
       </div>
-      <div class="col-3 mt-5">
+      <div class="post-col-3 mt-5">
+
+        <h4 class="note">Transcript automatically saved as seen below. You may edit text and save below.</h4>
         <form class="col-1" action="/post/updatePost/<%= post.id %>?_method=PUT" method="POST">
-        <!--speech to text, text goes here-->
-        <!-- <p id="transcript">
-          <%= post.transcript %>
-        </p> -->
 
-        <h4>We have saved the transcript as seen below. You make edit text and save below.</h4>
-        <textarea name="transcript" rows="10" cols="30"><%= post.transcript %></textarea>
+          <textarea name="transcript" rows="5" cols="50"><%= post.transcript %></textarea>
 
 
-        <button class="save" type="submit">Save edited transcript</button>
+          <button class="save" type="submit">Save edited transcript</button>
         </form>
 
-        <form class="col-1" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
-          <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-        </form>
 
         <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
-          <button class="delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="delete">DELETE<i class="fa-solid fa-trash"></i></button>
         </form>
 
 
 
 
-      </div>
-      <div class="col-6 mt-5">
-        <a class="btn btn-primary" href="/home ">Return to Home</a>
-        <a class="btn btn-primary" href="/projects">Return to Projects</a>
       </div>
     </div>
   </div>

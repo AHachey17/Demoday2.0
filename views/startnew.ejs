@@ -1,41 +1,41 @@
 <%- include('partials/header') -%>
 
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/login"><img class="logo" src="../imgs/3.jpg" alt="logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/account">Account</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/projects">Projects</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/startnew">Start New Project</a>
-          </li>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img class="logo" src="../imgs/3.jpg" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/account">Account</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/projects">Projects</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/startnew">Questionaire</a>
+        </li>
 
-        </ul>
-        <!-- <li class="nav-item">
+      </ul>
+      <!-- <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
         </li> -->
 
-        <form class="d-flex" role="search">
-          <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" role="search">
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button> -->
-          <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-        </form>
-      </div>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+      </form>
     </div>
-  </nav>
+  </div>
+</nav>
 
 
 
@@ -44,23 +44,12 @@
       <div class="col-6">
 
         <div class="mt-5">
-          <h2>Start new project</h2>
+          <h2>Questionaire</h2>
           <form action="/post/createPost" enctype="multipart/form-data" method="POST">
             <div class="mb-3">
               <!-- <label for="title" class="form-label">Job Title</label> -->
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false" name="job">
-                  Pick a job
-                </button>
-                <!-- <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" id="title" name="title"><button id="softwareQ">Fullstack
-                        Software Engineer</button></a></li>
-                  <li><a class="dropdown-item" href="#" id="title" name="title"><button id="advisorQ">Academic
-                        Advisor</button></a></li>
-                  <li><a class="dropdown-item" href="#" id="title" name="title"><button
-                        id="cashierQ">Cashier</button></a></li>
-                </ul> -->
+                
                 <select name="title" id="title">
                   <option selected disabled>Choose a Job</option>
                   <option value="Cashier">Cashier</option>
@@ -74,36 +63,31 @@
             </div>
             <div class="mb-3">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false" name="job">
-                  Choose amount of questions
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" id="question" name="question">5</a></li>
-                  <li><a class="dropdown-item" href="#" id="question" name="question">7</a></li>
-                  <li><a class="dropdown-item" href="#" id="question" name="question">10</a></li>
-                  <li><a class="dropdown-item" href="#" id="question" name="question">15</a></li>
-                  <li><a class="dropdown-item" href="#" id="question" name="question">20</a></li>
-                </ul>
+                
+                  <h3>How may questions should you study?</h3>
+                  <h4>30 min interview: about 9 questions</h4>
+                  <h4>45 min interview: about 15 questions</h4>
+                  <h4>60 min interview: about 18 questions</h4>
+                  <h4>90 min interview: about 27 questions</h4>
+
+
+              
               </div>
 
             </div>
-            <div class="mb-3">
-              <label for="imgUpload" class="form-label">Audio File</label>
-              <input type="file" class="form-control" id="audioUpload" name="file">
-            </div>
-            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+        
+            
           </form>
         </div>
       </div>
       <div class="col-6">
 
-        <p id="printcashierQ"></p>
-        <p id="printsoftwareQ"></p>
-        <p id="printadvisorQ"></p>
+        <p id="printQuestions"></p>
+        <p id="pintQuestionaire"></p>
+   
 
 
-
+       
 
       </div>
     </div>

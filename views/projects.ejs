@@ -1,58 +1,58 @@
 <%- include('partials/header') -%>
 
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/login"><img class="logo" src="../imgs/3.jpg" alt="logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/account">Account</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/projects">Projects</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/startnew">Start New Project</a>
-          </li>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img class="logo" src="../imgs/3.jpg" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/account">Account</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/projects">Projects</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/startnew">Questionaire</a>
+        </li>
 
-        </ul>
-        <!-- <li class="nav-item">
+      </ul>
+      <!-- <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
         </li> -->
 
-        <form class="d-flex" role="search">
-          <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" role="search">
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button> -->
-          <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-        </form>
-      </div>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+      </form>
     </div>
-  </nav>
+  </div>
+</nav>
 
 
-
-  <div class="container">
-    <div class="row justify-content-center mt-5">
+  <div class="card" style="width: 25rem;">
+    <div class="card-body">
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <h5>
-                <%= posts[i].title %>: <%= posts[i].question %>
-              </h5>
-              <audio class="audio-fluid" src="<%= posts[i].audio%>" controls>
-            </a>
-          </li>
-          <% } %>
+      <h5 class="card-title"><%= posts[i].title %> :</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary"><%= posts[i].question %></h6>
+      <p class="card-text"><%= posts[i].transcript %></p>
+      <audio class="audio-fluid" src="<%= posts[i].audio%>" controls></audio>
+      <a href="/post/<%= posts[i]._id%>#" class="card-link">Edit Answer text</a>
+      <% } %>
+    </li>
       </ul>
     </div>
   </div>
+
+
   <%- include('partials/footer') -%>
