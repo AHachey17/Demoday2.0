@@ -12,16 +12,13 @@ body{
 .indexContainer{
   background: url(../imgs/test2.gif);
   background-size: cover; 
+  background-color: rgba(248, 247, 216, 0.7);
 }
 
-
-#bg-video{
-  width: 100%;
-  position: relative;
-}
 
 main.container{
   margin: 10%;
+  
 }
 
 .index-intro{
@@ -39,7 +36,7 @@ main.container{
  }
 
 .index-img{
-  background-color:  rgba(203, 179, 100, 0.499);
+  background-color:rgba(203, 179, 100, 0.499);
   padding: 3%;
   width: 80%;
   height: 200px;
@@ -72,8 +69,14 @@ form.d-flex{
 .home-head{
   text-align: center;
   padding: 3%;
-  height: 50px;
-  margin: 2% 0 15% 0;
+  width: 100%;
+  margin: 2% 0 5% 0;
+}
+
+.home-pic{
+  border-radius: 10%;
+  margin-bottom: 3%;
+  width: 30%;
 }
 
 .home-btn{
@@ -107,6 +110,10 @@ form.d-flex{
   text-align: center;
 }
 
+div.col-6{
+  background: rgba(3, 3, 3, 0.521);
+}
+
 a.navbar-brand{
   color: rgb(203, 179, 100);
 }
@@ -121,6 +128,7 @@ color: gray;
 
 h1{
   color: grey;
+  font-size: 1.5rem;
 }
 
 h3{
@@ -131,13 +139,19 @@ h3{
 }
 
 .btn-primary{
-  border-color: white;
+  border-color: grey;
   font-family: 'Dancing Script', cursive;
 }
 
 h4{
   color: grey;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 3%;
+}
+
+a{
+  text-decoration: none;
+  color: white;
 }
 
 a:hover {

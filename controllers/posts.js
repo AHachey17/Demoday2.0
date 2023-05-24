@@ -56,9 +56,27 @@ module.exports = {
       console.log(err);
     }
   },
-  getQuestions: async (req, res) => {
+  getCashierQ: async (req, res) => {
     try {
       const questions = await Interview.find({position: "Cashier"});
+      console.log(questions);
+      res.json( { questions, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getAdvisorQ: async (req, res) => {
+    try {
+      const questions = await Interview.find({position: "AcademicAdvisor"});
+      console.log(questions);
+      res.json( { questions, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getSoftwareQ: async (req, res) => {
+    try {
+      const questions = await Interview.find({position: "SoftwareEngineering"});
       console.log(questions);
       res.json( { questions, user: req.user });
     } catch (err) {
@@ -100,6 +118,22 @@ module.exports = {
            return
         }
       }
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  updatePost: async (req, res) => {
+    try {
+      console.log(req.body)
+      console.log(req.params)
+      await Post.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $set: { transcript: req.body.transcript },
+        }
+      );
+      console.log("Likes +1");
+      res.redirect(`/post/${req.params.id}`);
     } catch (err) {
       console.log(err);
     }
